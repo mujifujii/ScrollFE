@@ -1,19 +1,45 @@
+
 <div class="container">
-  @for (text of textsForReading(); track $index){
-    <div class="row my-3">
-      <div class="col">
-        <mat-card appearance="outlined">
-          <mat-card-header>
-            <mat-card-title>{{text.title}}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>{{text.text}}</p>
-          </mat-card-content>
-          <mat-card-footer >
-            <p>{{text.author}}</p>
-          </mat-card-footer>
-        </mat-card>
-      </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Vorname</mat-label>
+        <input [field]="textObjectForm.firstname" matInput placeholder="Vorname">
+      </mat-form-field>
     </div>
-  }
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Nachname</mat-label>
+        <input [field]="textObjectForm.lastname" matInput placeholder="Nachname">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input [field]="textObjectForm.email" matInput placeholder="Email">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Nummer</mat-label>
+        <input [field]="textObjectForm.phone" matInput placeholder="Nummer">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button mat-flat-button (click)="uploadUser()">
+        upload user
+      </button>
+      <button (click)="console()">
+        consolelog
+      </button>
+    </div>
+  </div>
 </div>
